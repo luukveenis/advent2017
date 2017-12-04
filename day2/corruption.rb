@@ -2,7 +2,7 @@ require 'csv'
 
 class Corruption
   def initialize(filepath)
-    @csv = CSV.read(filepath, col_sep: " ").map { |row| row.map(&:to_i) }
+    @csv = CSV.read(filepath, col_sep: " ", converters: :integer)
   end
 
   def checksum
